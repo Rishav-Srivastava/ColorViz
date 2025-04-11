@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ColorViz - Color Visualization Tool</title>
+  <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <i class="ri-palette-line"></i> Color<span>Viz</span>
+        </a>
+        <button class="menu-button" id="menuToggle">
+          <i class="ri-menu-line"></i>
+        </button>
+        <ul class="menu" id="menu">
+          <li><a href="index.html" class="menu-link">Home</a></li>
+          <li><a href="pages/about.html" class="menu-link">About</a></li>
+          <li><a href="pages/contact.html" class="menu-link">Contact</a></li>
+          <li><a href="pages/developer.html" class="menu-link">Developer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home Page -->
+    <section>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>Visualize Colors <span class="text-primary">Beautifully</span></h1>
+              <p>An intuitive tool to experiment with colors, preview text readability, and find the perfect palette for your next project.</p>
+              <a href="#color-tool" class="btn btn-primary">
+                <i class="ri-palette-line"></i> Try Color Tool
+              </a>
+            </div>
+            <div class="hero-image">
+              <img src="https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&q=80&w=500&h=350&fit=crop" alt="Color palette illustration">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Color Picker Section -->
+      <section id="color-tool" class="color-tool">
+        <div class="container">
+          <div class="text-center mb-12">
+            <h2>Interactive Color Picker</h2>
+            <p class="text-gray">Adjust the RGB sliders to experiment with different colors and instantly see how they affect text readability.</p>
+          </div>
+
+          <div class="color-picker-container">
+            <!-- Color Picker -->
+            <div class="color-picker">
+              <div class="color-swatch" id="colorSwatch"></div>
+              
+              <div class="rgb-values">
+                <div class="rgb-value" id="redValue">R: 128</div>
+                <div class="rgb-value" id="greenValue">G: 128</div>
+                <div class="rgb-value" id="blueValue">B: 128</div>
+              </div>
+              
+              <div class="slider-container">
+                <div class="slider-label">
+                  <span>Red</span>
+                  <span id="redValueText">128</span>
+                </div>
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="255" 
+                  value="128" 
+                  class="slider slider-red" 
+                  id="redSlider"
+                >
+              </div>
+              
+              <div class="slider-container">
+                <div class="slider-label">
+                  <span>Green</span>
+                  <span id="greenValueText">128</span>
+                </div>
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="255" 
+                  value="128" 
+                  class="slider slider-green" 
+                  id="greenSlider"
+                >
+              </div>
+              
+              <div class="slider-container">
+                <div class="slider-label">
+                  <span>Blue</span>
+                  <span id="blueValueText">128</span>
+                </div>
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="255" 
+                  value="128" 
+                  class="slider slider-blue" 
+                  id="blueSlider"
+                >
+              </div>
+              
+              <div class="hex-value">
+                <span>Hex:</span>
+                <div class="hex-code" id="hexCode">#808080</div>
+                <button class="copy-btn" id="copyHex">
+                  <i class="ri-clipboard-line"></i>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Color Preview -->
+            <div class="color-preview">
+              <!-- Text on White Background -->
+              <div class="preview-card">
+                <div class="preview-header">
+                  <h3>Text on White Background</h3>
+                  <div class="color-indicator">
+                    <span>Text Color:</span>
+                    <div class="color-dot" id="textColorDot"></div>
+                  </div>
+                </div>
+                <div class="preview-content" id="whiteBackgroundPreview">
+                  <p>
+                    The purpose of this preview is to help you visualize how your selected color performs as text on a white background. 
+                    Good color contrast is essential for readability and accessibility. The Web Content Accessibility Guidelines (WCAG) 
+                    recommend a minimum contrast ratio of 4.5:1 for normal text to ensure it's readable by people with visual impairments. 
+                    Experiment with different colors to find the perfect balance between aesthetics and usability.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Background Color Preview -->
+              <div class="preview-card">
+                <div class="preview-header">
+                  <h3>Background Color Preview</h3>
+                  <div class="color-indicator">
+                    <span>Background:</span>
+                    <div class="color-dot" id="backgroundColorDot"></div>
+                  </div>
+                </div>
+                <div class="preview-content bg-preview" id="colorBackgroundPreview">
+                  <p id="colorBackgroundText">
+                    This preview demonstrates how text appears when placed on your selected background color. 
+                    When choosing background colors, consider both white and dark text options to ensure optimal contrast. 
+                    For darker backgrounds, white or light-colored text typically works best. The visual appeal of your design is important, 
+                    but never compromise on readability. A good rule of thumb is to make sure text stands out clearly against its background.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section">
+        <div class="container">
+          <div class="text-center mb-12">
+            <h2>About ColorViz</h2>
+            <p class="text-gray">Learn about our mission to help designers and developers create visually appealing and accessible color schemes.</p>
+          </div>
+
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="icon">
+                <i class="ri-palette-line"></i>
+              </div>
+              <h3>Our Mission</h3>
+              <p class="text-gray">
+                ColorViz was created to help designers and developers visualize color combinations easily. Our goal is to make color selection intuitive and accessible for everyone.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="icon">
+                <i class="ri-eye-line"></i>
+              </div>
+              <h3>Accessibility Focus</h3>
+              <p class="text-gray">
+                We believe that beautiful design should be accessible to all. Our tools help ensure your color choices meet WCAG accessibility standards for contrast and readability.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="icon">
+                <i class="ri-code-line"></i>
+              </div>
+              <h3>For Creators</h3>
+              <p class="text-gray">
+                Whether you're a professional designer, developer, or hobbyist, our tools are built to help you make better color decisions for your projects quickly and confidently.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="container">
+          <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+              <h2>Get In Touch</h2>
+              <p class="text-gray">Have questions or suggestions? We'd love to hear from you!</p>
+            </div>
+            
+            <div class="contact-form">
+              <form id="contactForm">
+                <div class="grid grid-template-columns-1fr grid-template-columns-2fr gap-6">
+                  <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                    <div class="form-error" id="nameError"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                    <div class="form-error" id="emailError"></div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" id="subject" name="subject" class="form-input" required>
+                  <div class="form-error" id="subjectError"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                  <div class="form-error" id="messageError"></div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block" id="submitButton">
+                  <i class="ri-send-plane-fill"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo mb-4">
+            <i class="ri-palette-line"></i> Color<span>Viz</span>
+          </a>
+          <p class="text-gray mb-4">
+            An intuitive tool to experiment with colors, preview text readability, and find the perfect palette for your next project.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="ri-twitter-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="GitHub">
+              <i class="ri-github-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="ri-instagram-fill"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="index.html">Home</a></li>
+            <li class="footer-link"><a href="pages/about.html">About</a></li>
+            <li class="footer-link"><a href="pages/contact.html">Contact</a></li>
+            <li class="footer-link"><a href="pages/developer.html">Developer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="pages/privacy.html">Privacy Policy</a></li>
+            <li class="footer-link"><a href="pages/terms.html">Terms of Service</a></li>
+            <li class="footer-link"><a href="pages/cookies.html">Cookie Policy</a></li>
+            <li class="footer-link"><a href="pages/sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p class="text-gray mb-4">
+            Subscribe to our newsletter to receive updates and tips on color usage.
+          </p>
+          <form id="newsletterForm" class="flex gap-2">
+            <input type="email" placeholder="Your email" class="form-input" required>
+            <button type="submit" class="btn btn-primary px-4">
+              <i class="ri-send-plane-fill"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ColorViz. All rights reserved. Designed by Rishav Srivastava.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-title" id="toastTitle">Success!</div>
+    <div class="toast-message" id="toastMessage">Action completed successfully.</div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - ColorViz</title>
+  <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo">
+          <i class="ri-palette-line"></i> Color<span>Viz</span>
+        </a>
+        <button class="menu-button" id="menuToggle">
+          <i class="ri-menu-line"></i>
+        </button>
+        <ul class="menu" id="menu">
+          <li><a href="../index.html" class="menu-link">Home</a></li>
+          <li><a href="about.html" class="menu-link">About</a></li>
+          <li><a href="contact.html" class="menu-link">Contact</a></li>
+          <li><a href="developer.html" class="menu-link">Developer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p class="text-gray">Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
+      </div>
+    </div>
+
+    <section class="py-16">
+      <div class="container">
+        <div class="max-w-2xl mx-auto">
+          <div class="grid grid-template-columns-1fr grid-template-columns-2fr gap-12 mb-12">
+            <div>
+              <h2 class="font-semibold mb-6">Get In Touch</h2>
+              <p class="text-gray mb-6">
+                Fill out the form and our team will get back to you as soon as possible. 
+                We value your feedback and are always looking to improve our tools.
+              </p>
+              <div class="contact-info">
+                <div class="contact-method">
+                  <i class="ri-map-pin-line"></i>
+                  <div class="contact-method-text">
+                    <h3>Address</h3>
+                    <p>New Delhi India ,110010</p>
+                  </div>
+                </div>
+                <div class="contact-method">
+                  <i class="ri-mail-line"></i>
+                  <div class="contact-method-text">
+                    <h3>Email</h3>
+                    <p>Srivastavarishavkumar@gmail.com</p>
+                  </div>
+                </div>
+                <div class="contact-method">
+                  <i class="ri-customer-service-line"></i>
+                  <div class="contact-method-text">
+                    <h3>Support</h3>
+                    <p>Srivastavarishavkumar@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="contact-form">
+                <form id="contactPageForm">
+                  <div class="form-group">
+                    <label for="contactName" class="form-label">Name</label>
+                    <input type="text" id="contactName" name="name" class="form-input" required>
+                    <div class="form-error" id="contactNameError"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contactEmail" class="form-label">Email</label>
+                    <input type="email" id="contactEmail" name="email" class="form-input" required>
+                    <div class="form-error" id="contactEmailError"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contactSubject" class="form-label">Subject</label>
+                    <input type="text" id="contactSubject" name="subject" class="form-input" required>
+                    <div class="form-error" id="contactSubjectError"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contactMessage" class="form-label">Message</label>
+                    <textarea id="contactMessage" name="message" class="form-textarea" rows="5" required></textarea>
+                    <div class="form-error" id="contactMessageError"></div>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary btn-block" id="contactSubmitButton">
+                    <i class="ri-send-plane-fill"></i> Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="../index.html" class="logo mb-4">
+            <i class="ri-palette-line"></i> Color<span>Viz</span>
+          </a>
+          <p class="text-gray mb-4">
+            An intuitive tool to experiment with colors, preview text readability, and find the perfect palette for your next project.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="ri-twitter-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="GitHub">
+              <i class="ri-github-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="ri-instagram-fill"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="../index.html">Home</a></li>
+            <li class="footer-link"><a href="about.html">About</a></li>
+            <li class="footer-link"><a href="contact.html">Contact</a></li>
+            <li class="footer-link"><a href="developer.html">Developer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="footer-link"><a href="terms.html">Terms of Service</a></li>
+            <li class="footer-link"><a href="cookies.html">Cookie Policy</a></li>
+            <li class="footer-link"><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p class="text-gray mb-4">
+            Subscribe to our newsletter to receive updates and tips on color usage.
+          </p>
+          <form id="newsletterForm" class="flex gap-2">
+            <input type="email" placeholder="Your email" class="form-input" required>
+            <button type="submit" class="btn btn-primary px-4">
+              <i class="ri-send-plane-fill"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ColorViz. All rights reserved. Designed by Rishav Srivastava.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-title" id="toastTitle">Success!</div>
+    <div class="toast-message" id="toastMessage">Action completed successfully.</div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

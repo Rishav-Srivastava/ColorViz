@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - ColorViz</title>
+  <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo">
+          <i class="ri-palette-line"></i> Color<span>Viz</span>
+        </a>
+        <button class="menu-button" id="menuToggle">
+          <i class="ri-menu-line"></i>
+        </button>
+        <ul class="menu" id="menu">
+          <li><a href="../index.html" class="menu-link">Home</a></li>
+          <li><a href="about.html" class="menu-link">About</a></li>
+          <li><a href="contact.html" class="menu-link">Contact</a></li>
+          <li><a href="developer.html" class="menu-link">Developer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="flex flex-col items-center justify-center py-16 min-h-screen">
+      <div class="container">
+        <div class="text-center">
+          <h1 class="text-primary font-bold text-6xl mb-8">404</h1>
+          <h2 class="text-3xl font-bold mb-4">Page Not Found</h2>
+          <p class="text-gray mb-8">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+          </p>
+          <a href="../index.html" class="btn btn-primary">
+            <i class="ri-home-line"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="../index.html" class="logo mb-4">
+            <i class="ri-palette-line"></i> Color<span>Viz</span>
+          </a>
+          <p class="text-gray mb-4">
+            An intuitive tool to experiment with colors, preview text readability, and find the perfect palette for your next project.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="ri-twitter-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="GitHub">
+              <i class="ri-github-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="ri-instagram-fill"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="../index.html">Home</a></li>
+            <li class="footer-link"><a href="about.html">About</a></li>
+            <li class="footer-link"><a href="contact.html">Contact</a></li>
+            <li class="footer-link"><a href="developer.html">Developer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="footer-link"><a href="terms.html">Terms of Service</a></li>
+            <li class="footer-link"><a href="cookies.html">Cookie Policy</a></li>
+            <li class="footer-link"><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p class="text-gray mb-4">
+            Subscribe to our newsletter to receive updates and tips on color usage.
+          </p>
+          <form id="newsletterForm" class="flex gap-2">
+            <input type="email" placeholder="Your email" class="form-input" required>
+            <button type="submit" class="btn btn-primary px-4">
+              <i class="ri-send-plane-fill"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ColorViz. All rights reserved. Designed by Rishav Srivastava.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-title" id="toastTitle">Success!</div>
+    <div class="toast-message" id="toastMessage">Action completed successfully.</div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/main.js"></script>
+</body>
+</html>
